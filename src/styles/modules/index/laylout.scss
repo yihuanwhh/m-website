@@ -11,7 +11,11 @@
 // 方案二：REM布局，又叫等比缩放布局（整个页面等比缩放）
 
 html {
-  // font-size: 26.666667vw;
+  font-size: 26.666667vw;
+  a{
+    color: #333;
+    text-decoration: none;
+  }
   // vw, vh
   // vw: 1vw = 当前屏幕宽度（逻辑宽度,即window.innerWidth）的 1%
 }
@@ -19,7 +23,10 @@ html {
 #app {
   height: 100%;
 }
-
+//设置input的placeholder颜色
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #fff;
+}
 .container {
   height: 100%;
   display: flex;
@@ -31,11 +38,147 @@ html {
     background-image: linear-gradient(to right, rgb(255, 100, 52) 0%, rgb(255, 71, 43) 100%);
     justify-content: space-between;
     align-items: center;
+    .search{
+      flex: 1;
+      height: .33rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      
+      .yo-ico{
+        color: #fff;
+        align-items: center;
+        @include contentFont(16px);
+        line-height: 33px;
+      }
+      .input-text{
+        @include contentFont(14px);
+        color: #fff;
+        border: none;
+        width: 100%;
+        height: .33rem;
+        background-color: transparent;
+        margin-left: 5px;
+        padding-right: 65px;
+      }
+    }
+    .searchBtn{
+      height: 31px;
+      width: 18%;
+      flex: 0 1 auto;
+      line-height: 33px;
+      position: absolute;
+      right: 14px;
+      button{
+        background: rgba(255, 85, 22, 0.54);
+        @include contentFont(14px);
+        border: none;
+        color: #FFF;
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        font-weight: 700;
+      }
+    }
   }
   main{
     flex : 1;
-    background: gray;
-
+    background: #FFF;
+    .menu-fixed {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: .49rem;
+      margin: 0 auto;
+      z-index: 10;
+    }
+    .menu-wrap{
+      height: .36rem;
+      max-width: 7.5rem;
+      background: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      .menu {
+        flex:1;
+        height: .36rem;
+        .swiper-wrapper{ 
+          width: auto !important;
+          .swiper-slide{
+            width: auto !important;
+            text-align: center;
+            max-width: 80px;
+            .menu-item{
+              padding: 0 10px;
+              display: block;
+              @include contentFont(15px);
+              color:#111;
+              line-height: .36rem;
+              height: .36rem;
+              font-weight: 500; 
+            }
+            .active{
+              color:#ff4901;
+              border-bottom: 2px solid #ff4901;
+            }
+          }
+        }
+      }
+      .swiper-button-next{
+        width: .36rem;
+        height: .36rem;
+        flex:1;
+        background: #fff;
+        margin-top: 0;
+        top: 0;
+        right: 0;
+        text-align: center;
+        line-height: .36rem;
+        
+        i{
+          font-weight: 900;
+          color: #ff4901;
+          @include contentFont(14px);
+        }
+      }
+      .cate{
+        flex: 0 0 .36rem;
+        width: .36rem;
+        height: .36rem;
+      }
+    }
+    .banner{
+      width: 100%;
+      height: 1.55rem;
+      margin-top: .36rem;
+      .swiper-container{
+        height: 100%;
+        .swiper-wrapper{
+          height: 100%;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .section{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding: 0 7px;
+      .section-item{
+        width:49%;
+        height: 1.06rem;
+        background: #f8f8f8;
+        margin:.04rem 0;
+        position: relative;
+        border-radius: 4px;
+      }
+    }
   }
   nav{
     height: .46rem;
