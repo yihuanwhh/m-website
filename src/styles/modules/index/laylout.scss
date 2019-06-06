@@ -49,11 +49,11 @@ html {
       .yo-ico{
         color: #fff;
         align-items: center;
-        @include contentFont(16px);
+        @include contentFont(14px);
         line-height: 33px;
       }
       .input-text{
-        @include contentFont(14px);
+        @include contentFont(12px);
         color: #fff;
         border: none;
         width: 100%;
@@ -72,7 +72,7 @@ html {
       right: 14px;
       button{
         background: rgba(255, 85, 22, 0.54);
-        @include contentFont(14px);
+        @include contentFont(12px);
         border: none;
         color: #FFF;
         display: block;
@@ -114,7 +114,7 @@ html {
             .menu-item{
               padding: 0 10px;
               display: block;
-              @include contentFont(15px);
+              @include contentFont(13px);
               color:#111;
               line-height: .36rem;
               height: .36rem;
@@ -141,7 +141,7 @@ html {
         i{
           font-weight: 900;
           color: #ff4901;
-          @include contentFont(14px);
+          @include contentFont(12px);
         }
       }
       .cate{
@@ -182,5 +182,29 @@ html {
   }
   nav{
     height: .46rem;
+    ul{
+      height: .46rem;
+      background: #fff;
+      display: flex;
+      color:#646464;
+      @include border(1px 0 0 0);
+      li{
+        height: 100%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include contentFont(8px);
+        &.active{
+          b,i{
+            color: #ff4901;
+          }
+        }
+        b{
+           font-weight: 100;
+           
+         }
+      }
+    }
   }
 }

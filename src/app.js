@@ -1,3 +1,11 @@
+// import Router from './router/'
+
+// new Router({
+//     mode:'hash'  //hash  ||  history
+// })
+
+
+
 const indexTpl = require('./views/index.html')
 const { list } = require('./controllers/list')
 
